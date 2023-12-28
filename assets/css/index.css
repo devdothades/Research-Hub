@@ -1,0 +1,415 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+/* FOR ALL */
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Poppins", sans-serif;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+/* END FOR ALL */
+
+/* FOR HEADER/NAVBAR */
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 5px 100px;
+	background: #282c34;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+}
+
+.logo {
+    margin-bottom: 2px;
+    height: 32px;
+	font-size: 32px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.navbar a {
+	font-size: 18px;
+	position: relative;
+	color: #fff;
+	font-weight: 500;
+	text-decoration: none;
+	margin-left: 40px;
+}
+
+.navbar a::before {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: red;
+	transition: 0.5s;
+}
+
+.navbar a:hover::before {
+	width: 100%;
+	background-color: orange;
+}
+
+.aclchome{
+    width: 100%;
+    margin-top: 34px;
+}
+
+
+/* END NAVBAR/HEADER */
+
+/* FOR HOME */
+/* .home {
+	background-color: #282c34;
+	min-height: 100vh;
+	background-size: cover;
+	background-position: center;
+	font-size: 3vmin;
+	font-family: JetBrains Mono, monospace;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #e4bb68;
+}
+
+
+
+.string {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	animation: move 4s infinite;
+}
+
+.greeting {
+	position: relative;
+	top: 8.6vmin;
+	animation: white-out 5s infinite;
+}
+
+.closure::after {
+	content: "";
+	position: absolute;
+	height: 25vmin;
+	width: 45vmin;
+	background: #282c34;
+	transform: translate(-45vmin, -24.5vmin);
+}
+
+.closure::before {
+	content: "";
+	position: absolute;
+	height: 25vmin;
+	width: 50vmin;
+	background: #282c34;
+	transform: translate(-44vmin, 7vmin);
+}
+
+.ab {
+	color: yellow;
+}
+
+.cd {
+	color: white;
+}
+
+.ef {
+	color: #c678dd;
+}
+
+.gh {
+	color: lightblue;
+}
+/* animation for strings */
+@keyframes move {
+	25% {
+		transform: translatey(-5.8vmin);
+	}
+	50% {
+		transform: translatey(-11vmin);
+	}
+	75% {
+		transform: translatey(-18vmin);
+	}
+} */
+/* END HOME */
+
+/* ABOUT */
+
+img {
+	border-radius: 10px;
+}
+
+#about {
+	height: 100vh;
+	width: 100vw;
+	padding: 78px 0px;
+	background-color: #191919;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#about img {
+	height: auto;
+	width: 420px;
+}
+
+.about-text {
+	width: 550px;
+}
+
+.main-about {
+	width: 1130px;
+	max-width: 95%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.about-text h1 {
+	color: white;
+	font-size: 80px;
+	text-transform: capitalize;
+	margin-bottom: 20px;
+}
+
+.about-text h5 {
+	color: white;
+	font-size: 25px;
+	text-transform: capitalize;
+	margin-bottom: 25px;
+	letter-spacing: 2px;
+}
+
+.about-text p {
+	color: white;
+	letter-spacing: 1px;
+	line-height: 24px;
+	font-size: 18px;
+	margin-bottom: 25px;
+}
+
+.button-about {
+	background: transparent;
+	color: white;
+	text-decoration: none;
+	border: 2px solid red;
+	font-weight: bold;
+	padding: 13px 30px;
+	border-radius: 30px;
+	margin-right: 20px;
+}
+
+.button-about:hover {
+	background-color: lightcoral;
+	cursor: pointer;
+}
+/* END ABOUT */
+
+/* GALLERY */
+#gallery {
+	font-family: "Muli", sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+	background-color: #282c34;
+}
+
+.gallery_container {
+	display: flex;
+	width: 90vw;
+}
+
+.panel {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 80vh;
+	border-radius: 50px;
+	color: #fff;
+	cursor: pointer;
+	flex: 0.5;
+	margin: 10px;
+	position: relative;
+	-webkit-transition: all 700ms ease-in;
+}
+
+.panel h3 {
+	font-size: 24px;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	margin: 0;
+	opacity: 0;
+}
+
+.panel.active {
+	flex: 5;
+}
+
+.panel.active h3 {
+	opacity: 1;
+	transition: opacity 0.3s ease-in 0.4s;
+}
+/* END GALLERY */
+
+/* SKILLS */
+#skills-section {
+	height: 100vh;
+	width: 100vw;
+	background-color: #191919;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.skill-card {
+	max-width: 190px;
+	max-height: 400px;
+	margin: 20px;
+	background-color: #282c34;
+	padding: 20px;
+	border: lightblue 2px solid;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.141);
+}
+
+.skill-card:hover {
+	cursor: pointer;
+	border-color: #191919;
+}
+
+.skill-image {
+	height: auto;
+	width: 100%;
+	border-radius: 8px;
+}
+
+.skill-name {
+	margin-top: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.progress-bar {
+	height: 15px;
+	background-color: #e0e0e0;
+	border-radius: 4px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+.progress {
+	height: 100%;
+	width: 60%; /* Change this value to represent the skill level */
+	background-color: red;
+	border-radius: 4px;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: black;
+	padding: 20px;
+	border-radius: 5px;
+	text-align: center;
+	z-index: 1000;
+	width: 50%;
+	height: 50%;
+	border: lightblue 3px solid;
+}
+
+.closeModal {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.3s ease-in-out;
+	border: none;
+}
+
+#tool-name {
+	margin-bottom: 60px;
+}
+
+#services{
+	width: 100%;
+	height: 100vh;
+	background-color: #282c34;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.services-container{
+	display: block;
+	align-items: flex-start;
+	justify-content: space-around;
+	height: 80%;
+	width: 80%;
+
+}
+
+.service-row{
+	margin: 10px 0px 10px 0px;
+	height: 30%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.services-card{
+	width: 50%;
+	height: 90%;
+	border-radius: 5px;
+	margin-left: 20px;
+	margin-right: 20px;
+	background-color: #191919;
+}
+
+.services-card:hover{
+	border: 2px solid lightblue;
+}
+
+
+.services-card h3{
+	color: white;
+	text-align: center;
+	margin-top: 5px;
+
+}
+.services-card p{
+	color: white;
+	text-align: justify;
+	margin: 20px 10px 20px 10px;
+}
