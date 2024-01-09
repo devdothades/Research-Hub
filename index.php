@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACLC</title>
     <link rel="stylesheet" href="assets/css/index.css?v=<?php echo time(); ?>">
+    <!-- The appended timestamp in the CSS/JS file's URL serves to bypass browser caching, 
+    ensuring that the updated stylesheet is fetched instead of using a cached version. -->
 
 </head>
 
@@ -23,6 +25,7 @@
                 <input type="email" placeholder="Gmail" name="EMAIL" required/>
                 <input type="password" placeholder="Password" name="PASSWORD" required/>
                 <button type="submit" name="">Sign Up</button>
+                <!-- We get the name tag to use it to php and do something to it -->
                 <!-- once clicked it will go to /scripts/authenticaion/signup.php -->
             </form>
         </div>
