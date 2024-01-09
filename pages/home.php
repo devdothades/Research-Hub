@@ -13,13 +13,15 @@ if (isset($_SESSION['username'])) {
 </head>
 <body>
     <h1><?php echo $_SESSION['username'] ?> </h1>
+    <a href=".././scripts/authentication/logout.php">logout</a>
     
 </body>
 </html>
 
 <?php
 } else {
-    header("Location: login.php");
+    header("Location: ../index.php");
     exit();
 }
 ?>
+
