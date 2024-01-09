@@ -7,7 +7,7 @@
 /* /all */
 
 body {
-	background: #f6f5f7;
+	background: #22092C;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -44,28 +44,11 @@ a {
 	text-decoration: none;
 	margin: 15px 0;
 }
-/* button {
-    transition: all .5s ease;
-    color: #fff;
-    border: 3px solid white;
-    font-family:'Montserrat', sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1;
-    font-size: 17px;
-    background-color : transparent;
-    padding: 10px;
-    outline: none;
-    border-radius: 4px;
-}
-button:hover {
-    color: #001F3F;
-    background-color: #fff;
-} */
+
 button {
 	border-radius: 20px;
-	border: 1px solid #ED9ED6;
-	background-color: #C683D7;
+	border: 1px solid #872341;
+	background-color: #872341;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -89,7 +72,7 @@ button.ghost {
 }
 
 button:hover{
-    background-color: #cd50ec;
+    background-color: #BE3144;
 }
 
 form {

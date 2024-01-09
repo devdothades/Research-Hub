@@ -13,7 +13,7 @@ USE ACLC;
 --     strand VARCHAR(255) NOT NULL
 -- );
 
-CREATE TABLE admin(
+CREATE TABLE users(
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     gmail VARCHAR(255) NOT NULL,

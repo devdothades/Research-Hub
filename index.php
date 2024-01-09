@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACLC</title>
     <link rel="stylesheet" href="assets/css/index.css?v=<?php echo time(); ?>">
+
 </head>
 
 <body>
@@ -15,14 +16,14 @@
 
         <!-- sign up -->
         <div class="form-container sign-up-container">
-            <form action="/scripts/authentication/signup.php">
+            <form action="./scripts/authentication/signup.php" method="POST">
                 <h1>Create Account</h1>
                 <!-- we will use this 3 names inside our signup.php -->
-                <input type="text" placeholder="Name" name="USERNAME"/>
-                <input type="email" placeholder="Email" name="EMAIL"/>
-                <input type="password" placeholder="Password" name="PASSWORD"/>
-                <button type="submit">Sign Up</button>
-                 <!-- once clicked it will go to /scripts/authenticaion/signup.php -->
+                <input type="text" placeholder="Username" name="USERNAME" required/>
+                <input type="email" placeholder="Gmail" name="EMAIL" required/>
+                <input type="password" placeholder="Password" name="PASSWORD" required/>
+                <button type="submit" name="">Sign Up</button>
+                <!-- once clicked it will go to /scripts/authenticaion/signup.php -->
             </form>
         </div>
         <!-- /sign up -->
@@ -30,10 +31,10 @@
 
         <!-- sign in -->
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form action="./scripts/authentication/signin.php" method="POST" >
                 <h1>Sign in</h1>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input type="text" placeholder="Username" name="USERNAME" required/>
+                <input type="password" placeholder="Password" name="PASSWORD" required/>
                 <button type="submit">Sign In</button>
                 <!-- once clicked it will go to /scripts/authenticaion/signup.php -->
             </form>
@@ -66,7 +67,7 @@
 
             </div>
 
-            
+
         </div>
         <!-- /overlay -->
     </div>
