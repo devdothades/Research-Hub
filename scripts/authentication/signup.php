@@ -116,7 +116,7 @@ if (strlen($password_hash) < 7) {
     </div>';
 }else {
   // stores the data into our database 
-  mysqli_query($conn, "INSERT INTO users (`username`, `gmail`, `password`, `address`, `strand`, `grade`, `section`) VALUE ('$username', '$gmail', '$password', '', '', '', '')");
+  mysqli_query($conn, "INSERT INTO users (`username`, `gmail`, `password`) VALUE ('$username', '$gmail', '$password')");
   echo '<div class="modal-container">
     <div class="modal-header">
       DONE
