@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACLC</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo1.png" />
     <link rel="stylesheet" href="assets/css/index.css?v=<?php echo time(); ?>">
     <!-- The appended timestamp in the CSS/JS file's URL serves to bypass browser caching, 
     ensuring that the updated stylesheet is fetched instead of using a cached version. -->

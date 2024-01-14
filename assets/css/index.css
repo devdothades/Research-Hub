@@ -6,8 +6,10 @@
 }
 /* /all */
 
+
+
 body {
-	background: #22092C;
+	background: url(../img/background/bg.jpg);
 	display: flex;
 	justify-content: center;
 	align-items: center;
