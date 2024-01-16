@@ -11,26 +11,42 @@
     <input type="file" name="pdfFile" id="pdfFile">
     <input type="submit" value="Upload PDF" name="submit">
 </form>
+<button>test</button>
+
+<script src="./scripts/sweetalert.js">
+</script>
+
+<script>
+  Swal.fire({
+  title: "هل تريد الاستمرار؟",
+  icon: "question",
+  iconHtml: "؟",
+  confirmButtonText: "نعم",
+  cancelButtonText: "لا",
+  showCancelButton: true,
+  showCloseButton: true
+});
+</script>
 
 </body>
 </html>
 
 <?php 
 
-require_once('scripts/db.php');
+// require_once('scripts/db.php');
 
-$fileName = $_FILES["pdfFile"]["name"];
-$fileData = file_get_contents($_FILES["pdfFile"]["tmp_name"]);
+// $fileName = $_FILES["pdfFile"]["name"];
+// $fileData = file_get_contents($_FILES["pdfFile"]["tmp_name"]);
 
-// Prepare and execute the SQL query to insert the file into the database
-$stmt = $conn->prepare("INSERT INTO pdf_files (file_name, file_data) VALUES (?, ?)");
-$stmt->bind_param("ss", $fileName, $fileData);
+// // Prepare and execute the SQL query to insert the file into the database
+// $stmt = $conn->prepare("INSERT INTO pdf_files (file_name, file_data) VALUES (?, ?)");
+// $stmt->bind_param("ss", $fileName, $fileData);
 
-if ($stmt->execute()) {
-    echo "PDF file uploaded successfully.";
-} else {
-    echo "Error uploading PDF file: " . $stmt->error;
-}
+// if ($stmt->execute()) {
+//     echo "PDF file uploaded successfully.";
+// } else {
+//     echo "Error uploading PDF file: " . $stmt->error;
+// }
 
 
 ?>
