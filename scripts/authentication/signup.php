@@ -29,6 +29,7 @@
 <?php
 // importing the database to use it in our queries
 require_once('../db.php');
+require_once('../script.php');
 
 // The validate function trims whitespace, removes backslashes,
 //  and converts special characters to HTML entities in the input data, making it safer for use in a web application.

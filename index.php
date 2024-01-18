@@ -22,9 +22,9 @@
             <form action="./scripts/authentication/signup.php" method="POST">
                 <h1>Create Account</h1>
                 <!-- we will use this 3 names inside our signup.php -->
-                <input type="text" placeholder="Username" name="USERNAME" required/>
-                <input type="email" placeholder="Gmail" name="EMAIL" required/>
-                <input type="password" placeholder="Password" name="PASSWORD" required/>
+                <input type="text" placeholder="Username" name="USERNAME" required />
+                <input type="email" placeholder="Gmail" name="EMAIL" required />
+                <input type="password" placeholder="Password" name="PASSWORD" required />
                 <button type="submit" name="">Sign Up</button>
                 <!-- We get the name tag to use it to php and do something to it -->
                 <!-- once clicked it will go to /scripts/authenticaion/signup.php -->
@@ -35,10 +35,10 @@
 
         <!-- sign in -->
         <div class="form-container sign-in-container">
-            <form action="./scripts/authentication/signin.php" method="POST" >
+            <form action="./scripts/authentication/signin.php" method="POST">
                 <h1>Sign in</h1>
-                <input type="text" placeholder="Username" name="USERNAME" required/>
-                <input type="password" placeholder="Password" name="PASSWORD" required/>
+                <input type="text" placeholder="Username" name="USERNAME" required />
+                <input type="password" placeholder="Password" name="PASSWORD" required />
                 <button type="submit">Sign In</button>
                 <!-- once clicked it will go to /scripts/authenticaion/signup.php -->
             </form>
@@ -76,7 +76,14 @@
         <!-- /overlay -->
     </div>
     <!-- /container -->
-    <script src="assets/js/index.js?v=<?php echo time(); ?>"></script>
+    <script type="module" src="assets/js/index.js?v=<?php echo time(); ?>"></script>
+    <!-- <script src="./scripts/sweetalert.js"></script> -->
+
+
+
+
+
+    </script>
 </body>
 
 </html>
