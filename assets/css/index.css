@@ -1,0 +1,37 @@
+@font-face{
+    font-family: Anton-Regular;
+    src: url(../fonts/Anton/Anton-Regular.ttf);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.form-container{
+    width: 23%;
+
+}
+
+h1{
+    font-family: 'Anton-Regular';
+}
+
+p{
+    font-style: italic;
+}
+
+button{
+    font-family: 'Anton-Regular';
+}
+
+input{
+    color: black;
+}
