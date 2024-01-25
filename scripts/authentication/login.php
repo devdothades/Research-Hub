@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 require_once('../../db.php');
 
 function validate($data){
@@ -9,24 +9,26 @@ function validate($data){
     return $data;
 }
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $gmail = validate(isset($_POST['GMAIL'])); 
-    $password = validate(md5(isset($_POST['PASSWORD'])));
+if(isset($_SERVER['REQUEST_METHOD']) == 'POST'){
+    $email = validate($_POST['EMAIL']); 
+    $password = md5(validate($_POST['PASSWORD']));
 
-    $select = "SELECT * FROM `accounts` WHERE `gmail`= '$gmail' AND `password` = '$password'";
+    $select = "SELECT * FROM `accounts` WHERE `email`= '$email' AND `password` = '$password'";
     $result = mysqli_query($conn, $select);
     
-    if(mysqli_num_rows($result) > 0){
+    if(mysqli_num_rows($result) == 1){
         $row = mysqli_fetch_array($result);
 
-        if($row['gmail'] === $gmail && $row['password'] === $password){
-            $_SESSION['username'] = $row['username'];
-            header('location: ../page/home.php');
+        if($row['email'] === $email && $row['password'] === $password){
+            $_SESSION['fullname'] = $row['fullname'];
+            header('location: ../../pages/home.php');
+            exit();
         }
         else{
-            header('location: ../../index.php?error=Incorrect Password or Gmail');
+            header('location: ../../index.php?error=error');
         }
     }else{
-        header('location: ../../index.php?error=Incorrect Password or Gmail');
+        header('location: ../../index.php?error=error');
     }
+
 }
