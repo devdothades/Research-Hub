@@ -13,6 +13,7 @@ if (isset($_SESSION['fullname'])) {
 </head>
 <body>
    <h1><?php echo $_SESSION['fullname'] ?></h1>
+   <a href="upload.php">upload</a>
    <a href="../scripts/authentication/logout.php">logout</a>
 </body>
 </html>

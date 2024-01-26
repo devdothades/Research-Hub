@@ -34,4 +34,9 @@ label{
     font-style: italic;
 }
 
+.input{
+    border: none;
+    background-color: #C0C0C0  ;
+}
+
 

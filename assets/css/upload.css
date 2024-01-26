@@ -19,4 +19,19 @@ h5{
 h3{
     text-decoration: underline blue 3px;
     text-underline-offset: 6px;
+    font-weight: bold;
 }
+
+.input{
+    background-color: #C0C0C0  ;
+}
+
+#date{
+    width: 40%;  
+    border: none;
+}
+
+#submitButton{
+    font-weight: bold;
+}
+

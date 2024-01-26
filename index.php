@@ -18,12 +18,17 @@
             </h1>
             <p>Login to your account</p>
         </div>
-        <form class="mt-5" action="./scripts/authentication/login.php" method="POST">
+        <?php if (isset($_GET["error"])) { ?>
+            <div class="alert alert-danger text-center" role="alert">
+                <?php echo $_GET['error'] ?>
+            </div>
+        <?php } ?>
+        <form class="mt-3" action="./scripts/authentication/login.php" method="POST">
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Enter your email" name="EMAIL" required/>
+                <input type="email" class="form-control input" placeholder="Enter your email" name="EMAIL" required />
             </div>
             <div class="form">
-                <input type="password" class="form-control mt-3" placeholder="Enter your password" name="PASSWORD" required/>
+                <input type="password" class="form-control mt-3 input" placeholder="Enter your password" name="PASSWORD" required />
             </div>
             <div class="mt-4">
                 <button type="submit" class="btn btn-primary form-control fw-bold ">
@@ -33,18 +38,7 @@
         </form>
         <p class="text-center mt-2">Not registered yet? <a href="./signup.php">Sign up</a></p>
     </div>
-    <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script>
-        <?php $error = isset($_GET['error']); ?>
-        if (<?php echo $error ?>) {
-            Swal.fire({
-                title: "Good job!",
-                text: "You clicked the button!",
-                icon: "success"
-            });
-        }
-    </script>
 </body>
 
 </html>

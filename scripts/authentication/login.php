@@ -25,10 +25,10 @@ if(isset($_SERVER['REQUEST_METHOD']) == 'POST'){
             exit();
         }
         else{
-            header('location: ../../index.php?error=error');
+            header('location: ../../index.php?error=Incorrect Password or Email');
         }
     }else{
-        header('location: ../../index.php?error=error');
+        header('location: ../../index.php?error=Incorrect Password or Email');
     }
 
 }
