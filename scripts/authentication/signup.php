@@ -12,7 +12,8 @@ function validate($data)
 
 if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
     $fullname = validate($_POST['FULLNAME']);
-    $email = validate($_POST['EMAIL']);
+    $email = strtolower(validate($_POST['EMAIL']));
+    $pswrd = validate($_POST['PASSWORD']);
     $password = validate(md5($_POST['PASSWORD']));
     $repassword = validate(md5($_POST['REPASSWORD']));
 
@@ -32,10 +33,10 @@ if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
         header("location: ../../signup.php?error=Gmail already in use");
     } else if ($password != $repassword) {
         header("location: ../../signup.php?error=Password must match");
-    } else if (strlen($password && $repassword) < 7) {
+    } else if (strlen($pswrd) < 7) {
         header("location: ../../signup.php?error=Password must be 8 character");
     } else {
         mysqli_query($conn, "INSERT INTO accounts (`fullname`, `email`, `password`) VALUE ('$fullname', '$email', '$password')");
-        header("location: ../../signup.php?success=account registered!");
+        header("location: ../../signup.php?success=Account registered!");
     }
 }

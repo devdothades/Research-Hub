@@ -10,7 +10,7 @@ function validate($data){
 }
 
 if(isset($_SERVER['REQUEST_METHOD']) == 'POST'){
-    $email = validate($_POST['EMAIL']); 
+    $email = strtolower(validate($_POST['EMAIL'])); 
     $password = md5(validate($_POST['PASSWORD']));
 
     $select = "SELECT * FROM `accounts` WHERE `email`= '$email' AND `password` = '$password'";
@@ -20,7 +20,7 @@ if(isset($_SERVER['REQUEST_METHOD']) == 'POST'){
         $row = mysqli_fetch_array($result);
 
         if($row['email'] === $email && $row['password'] === $password){
-            $_SESSION['fullname'] = $row['fullname'];
+            $_SESSION['id'] = $row['id'];
             header('location: ../../pages/home.php');
             exit();
         }

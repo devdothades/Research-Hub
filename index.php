@@ -5,8 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+    <!-- website logo icon -->
     <link rel="shortcut icon" type="image/x-icon" href="./assets/img/logo/logo.png" />
+    <!-- bootstrap css -->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css" />
+    <!-- plain css -->
     <link rel="stylesheet" href="./assets/css/index.css?<?php echo time(); ?>" />
 </head>
 
@@ -18,6 +21,7 @@
             </h1>
             <p>Login to your account</p>
         </div>
+        <!-- displays the error or success message when authenticating whether the password are incorrect and etc -->
         <?php if (isset($_GET["error"])) { ?>
             <div class="alert alert-danger text-center" role="alert">
                 <?php echo $_GET['error'] ?>
@@ -38,6 +42,7 @@
         </form>
         <p class="text-center mt-2">Not registered yet? <a href="./signup.php">Sign up</a></p>
     </div>
+    <!-- bootstrap javascript -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 
