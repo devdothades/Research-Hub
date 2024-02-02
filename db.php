@@ -1,7 +1,9 @@
 <?php 
 
-$conn = mysqli_connect("localhost","root","","ACLC");
+$conn = mysqli_connect("localhost","root","hm0ejd74","ACLC");
 
 if (mysqli_connect_errno()) {
-    printf("", mysqli_connect_error());
+    echo 'failed';
+}else{
+    echo 'connected';
 }

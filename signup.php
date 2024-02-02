@@ -35,24 +35,28 @@
             </div>
         <?php } ?>
 
-            <!-- start of the form tag where all datas are going to signup.php and perform the backend logic -->
+        <!-- start of the form tag where all data are going to signup.php and perform the backend logic -->
         <form class="mt-1" action="./scripts/authentication/signup.php" method="POST">
             <div class="form-group">
-                <label for="FULLNAME">Enter your Fullname</label>
-                <input type="text" class="form-control mt-1 input" placeholder="ex. Jerome Infante" name="FULLNAME" required />
+                <label for="FULL_NAME">Enter your Full name</label>
+                <input id="EMAIL" type="text" class="form-control mt-1 input" placeholder="ex. Warner Kayleigh "
+                       name="FULL_NAME" required/>
             </div>
             <div class="form-group mt-2">
                 <label for="EMAIL">Enter your Email</label>
-                <input type="email" class="form-control mt-1 input" placeholder="ex. jeromeinfante@gmail.com" name="EMAIL" required />
+                <input id="EMAIL" type="email" class="form-control mt-1 input"
+                       placeholder="ex. warnerkayleigh@gmail.com" name="EMAIL" required/>
             </div>
             <div class="row mt-2">
                 <div class="col">
                     <label for="PASSWORD">Enter your Password</label>
-                    <input type="password" class="form-control mt-1 input" placeholder="********" name="PASSWORD" required />
+                    <input id="PASSWORD" type="password" class="form-control mt-1 input" placeholder="********"
+                           name="PASSWORD" required/>
                 </div>
                 <div class="col">
-                    <label for="REPASSWORD">Confirm Password</label>
-                    <input type="password" class="form-control mt-1 input" placeholder="********" name="REPASSWORD" required />
+                    <label for="RE_PASSWORD">Confirm Password</label>
+                    <input id="PASSWORD" type="password" class="form-control mt-1 input" placeholder="********"
+                           name="RE_PASSWORD" required/>
                 </div>
             </div>
             <div class="mt-4">

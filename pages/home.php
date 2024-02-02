@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['id'])) {
+if (isset($_SESSION['full_name'])) {
 
 ?>
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ if (isset($_SESSION['id'])) {
     <title>Document</title>
 </head>
 <body>
-   <h1><?php echo $_SESSION['id'] ?></h1>
+   <h1><?php echo $_SESSION['full_name'] ?></h1>
    <a href="upload.php">upload</a>
    <a href="../scripts/authentication/logout.php">logout</a>
 </body>

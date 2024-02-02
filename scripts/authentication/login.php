@@ -1,12 +1,11 @@
 <?php 
 session_start();
-require_once('../../db.php');
+$conn = mysqli_connect("localhost", "root", "hm0ejd74", "ACLC");
 
-function validate($data){
+function validate($data): string{
     $data = trim($data);
     $data = stripslashes($data);
-    $data = stripslashes($data);
-    return $data;
+    return htmlspecialchars($data);
 }
 
 if(isset($_SERVER['REQUEST_METHOD']) == 'POST'){
@@ -20,7 +19,7 @@ if(isset($_SERVER['REQUEST_METHOD']) == 'POST'){
         $row = mysqli_fetch_array($result);
 
         if($row['email'] === $email && $row['password'] === $password){
-            $_SESSION['id'] = $row['id'];
+            $_SESSION['full_name'] = $row['full_name'];
             header('location: ../../pages/home.php');
             exit();
         }
