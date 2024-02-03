@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 
 
 // 1. **Session Start:**
@@ -26,18 +25,15 @@
 session_start();
 
 // Check if the user is logged in
-if (isset($_SESSION['fullname'])) {
-    // Unset all of the session variables
+if (isset($_SESSION['full_name'])) {
+    // Unset all the session variables
     $_SESSION = array();
 
     // Destroy the session
     session_destroy();
 
-    // Redirect to the login page or any other page you want
-    header("Location: ../../index.php");
-    exit();
-} else {
-    // Redirect to the login page if the user is not logged in
-    header("Location: ../../index.php");
-    exit();
+
 }
+// Redirect to the login page or any other page you want
+header("Location: ../../index.php");
+exit();

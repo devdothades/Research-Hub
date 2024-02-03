@@ -1,21 +1,20 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","hm0ejd74","ACLC");
+$conn = mysqli_connect("localhost", "root", "hm0ejd74", "ACLC");
 
 function validate($data): string
 {
     $data = trim($data);
     $data = stripslashes($data);
-    return stripslashes($data);
+    return htmlspecialchars($data);
 }
 
 if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
-    $full_name = validate($_POST['FULL_NAME']);
+    $full_name = ucwords(validate($_POST['FULL_NAME']));
     $email = strtolower(validate($_POST['EMAIL']));
     $pswrd = validate($_POST['PASSWORD']);
     $password = validate(md5($_POST['PASSWORD']));
     $re_password = validate(md5($_POST['RE_PASSWORD']));
-
 
 
     $select_email = "SELECT * FROM `accounts` WHERE email = '$email' ";

@@ -26,6 +26,10 @@ h3{
     background-color: #C0C0C0  ;
 }
 
+select{
+    background-color: #C0C0C0  ;
+}
+
 #date{
     width: 40%;  
     border: none;

@@ -18,6 +18,10 @@ h5{
   font-family: 'Archivo-Black';
 }
 
+h1{
+  font-family: 'Archivo-Black';
+}
+
 .b-example-divider {
     height: 3rem;
     background-color: rgba(0, 0, 0, .1);
