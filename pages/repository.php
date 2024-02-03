@@ -41,9 +41,9 @@ if (isset($_SESSION['full_name'])) {
 
             <ul class="navbar-nav me-5">
                 <li class="nav-item">
-                    <a class="nav-link" href="../scripts/authentication/logout.php">
+                    <button class="nav-link" id="logout">
                         <img src="../assets/img/icons/logout.svg" alt="logout button" height="25"/>
-                    </a>
+                    </button>
                 </li>
             </ul>
         </div>
@@ -72,6 +72,9 @@ if (isset($_SESSION['full_name'])) {
                 </div>
             </div>
         </div>
+        <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+        <script src=".././node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../js/repository.js"></script>
     </body>
 
     </html>
