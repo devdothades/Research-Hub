@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['fullname'])) {
+if (isset($_SESSION['full_name'])) {
 
 ?>
 
@@ -26,16 +26,16 @@ if (isset($_SESSION['fullname'])) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="./home.php">Home</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="#">Repository</a>
+                        <a class="nav-link" href="./home.php">About</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="./home.php">Contact</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="search_repository.php">Repository</a>
                     </li>
                 </ul>
 
@@ -68,7 +68,7 @@ if (isset($_SESSION['fullname'])) {
                     <div class="row g-2 mt-2 justify-content-around">
                         <div class="col-sm-5 me-5">
                             <label for="PASSWORD">Enter the Authors</label>
-                            <input type="text" class="form-control mt-1 border border-0 input" placeholder="ex. Jerome Infante, Jhayen Villanueva, ..." required />
+                            <input type="text" class="form-control mt-1 border border-0 input" placeholder="ex. Jerome Infante, Boboy Infnte, ..." required />
                         </div>
                         <div class="col-sm-5">
                             <label for="REPASSWORD">Published Date</label>

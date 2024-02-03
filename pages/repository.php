@@ -19,16 +19,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item mx-2">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="home.php">Home</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link" href="#">Repository</a>
+                    <a class="nav-link" href="home.php">About</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="home.php">Contact</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="search_repository.php">Repository</a>
                 </li>
             </ul>
 
@@ -48,7 +48,7 @@
                 <h3 class="text-black">
                     researchhub: a Gamification of learning Programming
                 </h3>
-                <!-- <?php echo title ?> -->
+
                 <p class="mb-0"><strong>Author: </strong>dev frog</p>
                 <p class="mb-0"><strong>Published: </strong>January 2024</p>
                 <p>
@@ -100,6 +100,7 @@
 
     </div>
     </div>
+    <script src=".././node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </body>
 
 </html>
