@@ -21,3 +21,31 @@ logout.addEventListener('click', () => {
         }
     });
 });
+
+let submit = document.getElementById('submit');
+submit.addEventListener('click', () =>{
+    Swal.fire({
+    title: "Are you sure?",
+    text: "Check before you confirm",
+    icon: "info",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Confirm"
+}).then((result) => {
+    if (result.isConfirmed) {
+        Swal.fire({
+            title: "Uploaded!",
+            text: "Research Repository Uploaded Successfully!",
+            icon: "success"
+        });
+        setTimeout(() =>{
+            document.getElementById('FORM').submit();
+        }, 5000)
+
+    }
+});
+})
+
+
+

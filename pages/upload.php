@@ -51,7 +51,7 @@ if (isset($_SESSION['full_name'])) {
 
     <div class="form-container mt-4 mx-5">
         <h3 class="text-black ms-5">Upload Research</h3>
-        <form class="mt-1" action="../scripts/upload/upload.php" method="POST">
+        <form class="mt-1" action="../scripts/upload/upload.php" method="POST" id="FORM">
             <div class="mx-3">
                 <div class="row g-2 mt-2 justify-content-around">
                     <div class="col-sm-5 me-5">
@@ -61,13 +61,23 @@ if (isset($_SESSION['full_name'])) {
                     </div>
                     <div class="col-sm-5">
                         <label for="">Enter Research Category</label>
-                        <!--                        <input type="text" class="form-control mt-1 border border-0 input"-->
-                        <!--                               placeholder="ex. Technologies, Psychology, Science, etc" required/>-->
-                        <select class="form-select mt-1" aria-label="Default select example">
-                            <option selected disabled>Select Categories</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select mt-1" aria-label="Default select example" name="category">
+                            <option selected disabled>Select Category</option>
+                            <option value="Natural Sciences">Natural Sciences</option>
+                            <option value="Social Sciences">Social Sciences</option>
+                            <option value="Humanities">Humanities</option>
+                            <option value="Engineering & Technology">Engineering & Technology</option>
+                            <option value="Health Sciences">Health Sciences</option>
+                            <option value="Environmental Sciences">Environmental Sciences</option>
+                            <option value="Mathematics & Statistics">Mathematics & Statistics</option>
+                            <option value="Business & Economics">Business & Economics</option>
+                            <option value="Education">Education</option>
+                            <option value="ICT">Information and Communication Technology</option>
+                            <option value="Agricultural & Environmental Sciences">Agriculture & Environmental Sciences</option>
+                            <option value="Law & Legal Studies">Law & Legal Studies</option>
+                            <option value="Fine Arts & Performing Arts">Fine Arts & Performing arts</option>
+                            <option value="Psychology & Behavioral Sciences">Psychology & Behavioral Sciences</option>
+                            <option value="Space & Planetary Sciences">Space & Planetary Sciences</option>
                         </select>
                     </div>
                 </div>
@@ -78,17 +88,19 @@ if (isset($_SESSION['full_name'])) {
                     <div class="col-sm-5 me-5">
                         <label for="PASSWORD">Enter the Authors</label>
                         <input type="text" class="form-control mt-1 border border-0 input"
-                               placeholder="ex. Jerome Infante, Boboy Infnte, ..." required/>
+                               placeholder="ex. Jerome Infante, Boboy Infnte, ..." required name="authors"/>
                     </div>
 
                     <div class="col-sm-5">
-                        <label for="">Enter Research Category</label>
+                        <label for="">Enter your strand</label>
 
-                        <select class="form-select mt-1" aria-label="Default select example">
-                            <option selected disabled>Select Categories</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select mt-1" aria-label="Default select example" name="strand">
+                            <option selected disabled>Select Category</option>
+                            <option value="TVL">TVL</option>
+                            <option value="HUMMS">HUMMS</option>
+                            <option value="GAS">GAS</option>
+                            <option value="STEM">STEM</option>
+                            <option value="ABM">ABM</option>
                         </select>
                     </div>
                 </div>
@@ -98,7 +110,7 @@ if (isset($_SESSION['full_name'])) {
                 <div class="mx-5">
                     <label for="exampleFormControlTextarea1">Enter a Description</label>
                     <textarea class="form-control border border-0 input" rows="3"
-                              placeholder="This research is about..."></textarea>
+                              placeholder="This research is about..." name="description"></textarea>
                 </div>
             </div>
 
@@ -106,12 +118,14 @@ if (isset($_SESSION['full_name'])) {
                 <label for="UploadResearchPDF"></label>
                 <input placeholder="Upload" type="file" id="UploadResearchPDF"/>
             </div>
-            <button type="button" class="btn btn-primary mx-5 mt-3" id="submitButton">SUBMIT</button>
+
         </form>
+        <button class="btn btn-primary mx-5 mt-3" id="submit">SUBMIT</button>
+
     </div>
     <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src=".././node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="../js/upload.js"></script>
+    <script src="../js/upload.js?=<?php echo time()?>"></script>
     </body>
 
     </html>

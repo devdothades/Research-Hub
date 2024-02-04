@@ -22,6 +22,7 @@ if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
         if ($row['email'] === $email && $row['password'] === $password) {
             $_SESSION['full_name'] = $row['full_name'];
             $_SESSION['email'] = $row['email'];
+            $_SESSION['id'] = $row['id'];
             header('location: ../../pages/home.php');
             exit();
         } else {

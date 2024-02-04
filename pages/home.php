@@ -53,7 +53,7 @@ if (isset($_SESSION['full_name'])) {
         <section id="home">
             <div class="px-4 py-5 my-5 text-center">
                 <img class="d-block mx-auto mb-4" src="../assets/img/logo/logo.png" alt="" width="120" height="90">
-                <h1 class="display-5 fw-bold">Welcome! <?php echo $_SESSION['full_name'] ?></h1>
+                <h1 class="display-5 fw-bold">Welcome! <?php echo $_SESSION['full_name']?></h1>
                 <div class="col-lg-6 mx-auto">
                     <p class="lead mb-4">Explore cutting-edge research at ACLC Research Repository – a hub of innovative
                         studies and scholarly work in various disciplines</p>
