@@ -51,7 +51,7 @@ if (isset($_SESSION['full_name'])) {
 
     <div class="form-container mt-4 mx-5">
         <h3 class="text-black ms-5">Upload Research</h3>
-        <form class="mt-1" action="../scripts/upload/upload.php" method="POST" id="FORM">
+        <form class="mt-1" action="../scripts/upload/upload.php" method="POST" id="FORM" enctype="multipart/form-data">
             <div class="mx-3">
                 <div class="row g-2 mt-2 justify-content-around">
                     <div class="col-sm-5 me-5">
@@ -116,11 +116,11 @@ if (isset($_SESSION['full_name'])) {
 
             <div class="mt-4 mx-5">
                 <label for="UploadResearchPDF"></label>
-                <input placeholder="Upload" type="file" id="UploadResearchPDF"/>
+                <input placeholder="Upload" type="file" id="UploadResearchPDF" name="pdfFile"/>
             </div>
 
+            <button class="btn btn-primary mx-5 mt-3" id="submit" type="submit">SUBMIT</button>
         </form>
-        <button class="btn btn-primary mx-5 mt-3" id="submit">SUBMIT</button>
 
     </div>
     <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
