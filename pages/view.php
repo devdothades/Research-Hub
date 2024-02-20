@@ -48,30 +48,35 @@ if (isset($_SESSION['full_name'])) {
         </div>
     </nav>
 
+    <?php
+        $conn = mysqli_connect("localhost", "root", "hm0ejd74", "ACLC");
+
+        $id = $_GET['id'];
+        $query = mysqli_query($conn, "SELECT * FROM researches WHERE id='$id'");
+
+        while ($row = mysqli_fetch_assoc($query)){
+            $title = $row["title"];
+            $author = $row['authors'];
+            $category = $row["category"];
+            $strand = $row["strand"];
+            $description = $row["description"];
+        }
+    ?>
     <div class="form-container mt-4 mx-5">
         <div class="row">
             <div class="col-xs-12 col-md-8">
                 <h3 class="text-black">
-                    researchhub: a Gamification of learning Programming
+                   <?php echo $title ?>
                 </h3>
 
-                <p class="mb-0"><strong>Author: </strong>dev frog</p>
+                <p class="mb-0"><strong>Author: </strong> <?php echo $author ?></p>
+                <p class="mb-0"><strong>Strand: </strong> <?php echo $author ?></p>
                 <p class="mb-0"><strong>Published: </strong>January 2024</p>
                 <p>
-                    <strong>Categories: </strong>Educational, Computer
-                    Science, Randomized Algorithm
+                    <strong>Categories: </strong> <?php echo $category ?>
                 </p>
                 <p>
-                    <strong>Description:</strong>Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Illum repellendus, sit
-                    quibusdam non eum architecto consectetur hic. Ut,
-                    voluptatem consequatur dignissimos exercitationem error
-                    neque dolor amet placeat, nesciunt autem aliquid?
-                    Eligendi itaque, dolorum commodi soluta, maxime magnam
-                    minima numquam sint tempore voluptatum ab est
-                    exercitationem accusamus rem quae. Nulla deleniti
-                    similique repudiandae consectetur natus harum ad
-                    inventore quasi dolore ratione!
+                    <strong>Description:</strong> <?php echo $description ?>
                 </p>
 
                 <button class="btn btn-primary">Download</button>

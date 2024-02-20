@@ -51,6 +51,16 @@ if (isset($_SESSION['full_name'])) {
 
     <div class="form-container mt-4 mx-5">
         <h3 class="text-black ms-5">Upload Research</h3>
+        <?php if (isset($_GET["error"])) { ?>
+            <div class="alert alert-danger text-center" role="alert">
+                <?php echo $_GET['error'] ?>
+            </div>
+        <?php } ?>
+        <?php if (isset($_GET["success"])) { ?>
+            <div class="alert alert-success text-center" role="alert">
+                <?php echo $_GET['success'] ?>
+            </div>
+        <?php } ?>
         <form class="mt-1" action="../scripts/upload/upload.php" method="POST" id="FORM" enctype="multipart/form-data">
             <div class="mx-3">
                 <div class="row g-2 mt-2 justify-content-around">
