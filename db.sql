@@ -17,6 +17,7 @@ CREATE TABLE messages(
 
 CREATE TABLE researches(
                          id INT AUTO_INCREMENT PRIMARY KEY,
+                         uploader VARCHAR(255) NOT NULL,
                          title VARCHAR(255) NOT NULL,
                          authors VARCHAR(255) NOT NULL,
                          category VARCHAR(255) NOT NULL,

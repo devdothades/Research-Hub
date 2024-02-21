@@ -76,6 +76,8 @@ if (isset($_SESSION['full_name'])) {
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['title'] ?></h5>
                             <a href="view.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">View</a>
+                            <p>Uploaded by: <strong><?php echo $row['uploader']?></strong></p>
+                            <p>Date: <strong><?php echo $row['created_at']?></strong></p>
                         </div>
                     </div>
                 </div>

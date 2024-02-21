@@ -14,30 +14,59 @@ function validate($file)
 
 
 
+
+
 if (isset($_SERVER["REQUEST_METHOD"]) == "POST") {
 
+    $uploader = $_SESSION['full_name'];
     $title = ucwords($_POST["title"]);
     $author = ucwords($_POST["authors"]);
     $category = $_POST["category"];
     $strand = $_POST["strand"];
     $description = ucfirst($_POST["description"]);
 
+//    $upload_dir = "../../pdfs/";
+//    $pdf_name = validate($_FILES["pdfFile"]["name"]);
+//    $upload_file = $upload_dir . validate(basename($_FILES["pdfFile"]["name"]));
+//    $extension = strtolower(pathinfo($upload_file, PATHINFO_EXTENSION));
+//
+//
+//    if ($extension != "pdf") {
+//        header("location: ../../pages/upload.php?error=File must be PDF Format");
+//    } else if (file_exists($upload_file)) {
+//        move_uploaded_file($_FILES["pdfFile"]["tmp_name"], $upload_file);
+//        mysqli_query($conn, "INSERT INTO researches(uploader, title, authors, category, strand, description, pdf_name)VALUES ('$uploader','$title', '$author', '$category', '$strand', '$description', '$pdf_name')");
+//        header("location: ../../pages/upload.php?success=Uploaded Successfully!");
+//    } else {
+//        move_uploaded_file($_FILES["pdfFile"]["tmp_name"], $upload_file);
+//        mysqli_query($conn, "INSERT INTO researches(uploader, title, authors, category, strand, description, pdf_name)VALUES ('$uploader','$title', '$author', '$category', '$strand', '$description', '$pdf_name')");
+//        header("location: ../../pages/upload.php?success=Uploaded Successfully!");
+//    }
+//}
     $upload_dir = "../../pdfs/";
     $pdf_name = validate($_FILES["pdfFile"]["name"]);
     $upload_file = $upload_dir . validate(basename($_FILES["pdfFile"]["name"]));
     $extension = strtolower(pathinfo($upload_file, PATHINFO_EXTENSION));
 
+// Check if the file already exists in the upload directory
+    if (file_exists($upload_file)) {
+        $filename = pathinfo($upload_file, PATHINFO_FILENAME);
+        $counter = 1;
 
-    if ($extension != "pdf") {
-        header("location: ../../pages/upload.php?error=File must be PDF Format");
-    } else if (file_exists($upload_file)) {
-        header("location: ../../pages/upload.php?error=File already exists");
-    } else {
-        move_uploaded_file($_FILES["pdfFile"]["tmp_name"], $upload_file);
-        mysqli_query($conn, "INSERT INTO researches(title, authors, category, strand, description, pdf_name)VALUES ('$title', '$author', '$category', '$strand', '$description', '$pdf_name')");
-        header("location: ../../pages/upload.php?success=Uploaded Successfully!");
+        // Append a letter until a unique filename is found
+        while (file_exists($upload_file)) {
+            $new_filename = $filename . "_" . $counter;
+            $upload_file = $upload_dir . $new_filename . "." . $extension;
+            $counter++;
+        }
+
+        $pdf_name = $new_filename . "." . $extension;
     }
 }
+// Now you can proceed to move the uploaded file and insert into the database
+    move_uploaded_file($_FILES["pdfFile"]["tmp_name"], $upload_file);
+    mysqli_query($conn, "INSERT INTO researches(uploader, title, authors, category, strand, description, pdf_name)VALUES ('$uploader','$title', '$author', '$category', '$strand', '$description', '$pdf_name')");
+    header("location: ../../pages/upload.php?success=Uploaded Successfully!");
 
 
 //chmod("./pdfs/oraclasdasdaasdasde.pdf", 0644);

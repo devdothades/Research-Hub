@@ -64,7 +64,7 @@ if (isset($_SESSION['full_name'])) {
                 <h3 class="text-black">
                     <?php echo $row['title'] ?>
                 </h3>
-
+                <p class="mb-0"><strong>Uploaded by: </strong> <?php echo $row['uploader'] ?></p>
                 <p class="mb-0"><strong>Author: </strong> <?php echo $row['authors'] ?></p>
                 <p class="mb-0"><strong>Strand: </strong> <?php echo $row['strand'] ?></p>
                 <p class="mb-0"><strong>Published: </strong><?php echo $row['created_at'] ?></p>
@@ -75,7 +75,7 @@ if (isset($_SESSION['full_name'])) {
                     <strong>Description:</strong> <?php echo $row['description'] ?>
                 </p>
 
-                <button class="btn btn-primary">Download</button>
+                <a class="btn btn-primary" href="download.php?file=<?php echo $row['pdf_name']?>">Download</a>
             </div>
             <?php endwhile; ?>
 
