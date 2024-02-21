@@ -13,7 +13,7 @@ if (isset($_SESSION['full_name'])) {
         <title>Repository</title>
         <link rel="shortcut icon" type="image/x-icon" href=".././assets/img/logo/logo.png"/>
         <link rel="stylesheet" href=".././node_modules/bootstrap/dist/css/bootstrap.css"/>
-        <link rel="stylesheet" href="../assets/css/view.css"/>
+        <link rel="stylesheet" href="../assets/css/view.css?=<?php echo time()?>"/>
     </head>
 
     <body>
@@ -40,69 +40,72 @@ if (isset($_SESSION['full_name'])) {
 
             <ul class="navbar-nav me-5">
                 <li class="nav-item">
-                    <a class="nav-link" href="../scripts/authentication/logout.php">
+                    <button class="nav-link" id="logout">
                         <img src="../assets/img/icons/logout.svg" alt="logout button" height="25"/>
-                    </a>
+                    </button>
                 </li>
             </ul>
         </div>
     </nav>
 
+
     <?php
-        $conn = mysqli_connect("localhost", "root", "hm0ejd74", "ACLC");
+    $conn = mysqli_connect("localhost", "root", "hm0ejd74", "ACLC");
 
-        $id = $_GET['id'];
-        $query = mysqli_query($conn, "SELECT * FROM researches WHERE id='$id'");
+    $id = $_GET['id'];
+    $query = mysqli_query($conn, "SELECT * FROM researches WHERE id='$id'");
+    $query_comment = mysqli_query($conn, "SELECT * FROM comments WHERE repository='$id'");
 
-        while ($row = mysqli_fetch_assoc($query)){
-            $title = $row["title"];
-            $author = $row['authors'];
-            $category = $row["category"];
-            $strand = $row["strand"];
-            $description = $row["description"];
-        }
-    ?>
+    while ($row = mysqli_fetch_assoc($query)) : ?>
+
     <div class="form-container mt-4 mx-5">
         <div class="row">
             <div class="col-xs-12 col-md-8">
                 <h3 class="text-black">
-                   <?php echo $title ?>
+                    <?php echo $row['title'] ?>
                 </h3>
 
-                <p class="mb-0"><strong>Author: </strong> <?php echo $author ?></p>
-                <p class="mb-0"><strong>Strand: </strong> <?php echo $author ?></p>
-                <p class="mb-0"><strong>Published: </strong>January 2024</p>
+                <p class="mb-0"><strong>Author: </strong> <?php echo $row['authors'] ?></p>
+                <p class="mb-0"><strong>Strand: </strong> <?php echo $row['strand'] ?></p>
+                <p class="mb-0"><strong>Published: </strong><?php echo $row['created_at'] ?></p>
                 <p>
-                    <strong>Categories: </strong> <?php echo $category ?>
+                    <strong>Categories: </strong> <?php echo $row['category'] ?>
                 </p>
                 <p>
-                    <strong>Description:</strong> <?php echo $description ?>
+                    <strong>Description:</strong> <?php echo $row['description'] ?>
                 </p>
 
                 <button class="btn btn-primary">Download</button>
             </div>
+            <?php endwhile; ?>
+
+
             <div class="col-xs-6 col-md-4 border comment-container">
                 <h5 class="text-black">Comments</h5>
                 <div class="scrollable-comments">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <p>Type your note, and hit enter to add it</p>
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                    <p class="small mb-0 ms-2">Johny</p>
+                    <?php while ($row_comment = mysqli_fetch_assoc($query_comment)) : ?>
+                        <div class="card mb-4">
+                            <p class="m-1"><?php echo $row_comment['comment'] ?></p>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <p class="small mb-0 ms-2"><?php echo $row_comment['name'] ?></p>
+
+                                    </div>
+                                    <p class="small mb-0 ms-2"><?php echo $row_comment['time'] ?></p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    <?php endwhile; ?>
                 </div>
 
                 <div class="add-comment">
-                    <form>
+                    <form action="../scripts/comment/comment.php" method="post">
                         <div class="form-group">
                             <textarea class="form-control mb-2" id="comment" rows="1"
-                                      placeholder="Add Comment..."></textarea>
+                                      placeholder="Add Comment..." name="comment" required></textarea>
                         </div>
+                        <input type="hidden" value="<?php echo $id ?>" name="id">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
@@ -110,8 +113,9 @@ if (isset($_SESSION['full_name'])) {
         </div>
 
     </div>
-    </div>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src=".././node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../js/view.js?=<?php echo time()?>"></script>
     </body>
 
     </html>

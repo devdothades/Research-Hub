@@ -22,7 +22,7 @@ if (isset($_SERVER["REQUEST_METHOD"]) == "POST") {
     $strand = $_POST["strand"];
     $description = ucfirst($_POST["description"]);
 
-    $upload_dir = "pdfs/";
+    $upload_dir = "../../pdfs/";
     $pdf_name = validate($_FILES["pdfFile"]["name"]);
     $upload_file = $upload_dir . validate(basename($_FILES["pdfFile"]["name"]));
     $extension = strtolower(pathinfo($upload_file, PATHINFO_EXTENSION));

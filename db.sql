@@ -22,13 +22,15 @@ CREATE TABLE researches(
                          category VARCHAR(255) NOT NULL,
                          strand VARCHAR(255) NOT NULL,
                          description VARCHAR(1000) NOT NULL,
-                         pdf_name VARCHAR(255) NOT NULL
+                         pdf_name VARCHAR(255) NOT NULL,
+                         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE comments(
                          id INT AUTO_INCREMENT PRIMARY KEY,
                          name VARCHAR(255) NOT NULL,
-                         comment VARCHAR(255) NOT NULL,
-                         repository VARCHAR(255) NOT NULL
+                         comment VARCHAR(500) NOT NULL,
+                         repository VARCHAR(255) NOT NULL,
+                         time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

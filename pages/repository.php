@@ -60,27 +60,29 @@ if (isset($_SESSION['full_name'])) {
                 <a class="btn btn-primary" href="./upload.php">Upload</a>
             </div>
         </div>
-        <?php
 
-        $conn = mysqli_connect("localhost", "root", "hm0ejd74", "ACLC");
 
-        $query = mysqli_query($conn, "SELECT * FROM researches;");
+        <div class="row container-fluid">
+            <?php
 
-        while ($row = mysqli_fetch_assoc($query)) : ?>
+            $conn = mysqli_connect("localhost", "root", "hm0ejd74", "ACLC");
 
-            <div class="row container-fluid">
+            $query = mysqli_query($conn, "SELECT * FROM researches;");
+
+            while ($row = mysqli_fetch_assoc($query)) : ?>
                 <div class="col-md-3 mb-4">
                     <div class="card">
                         <img src="../assets/img/logo/logo.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $row['title']?></h5>
-                            <a href="view.php?id=<?php echo $row['id']?>" class="btn btn-primary">View</a>
+                            <h5 class="card-title"><?php echo $row['title'] ?></h5>
+                            <a href="view.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">View</a>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php endwhile; ?>
+        </div>
 
-        <?php endwhile; ?>
+
         <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
         <script src=".././node_modules/bootstrap/dist/js/bootstrap.js"></script>
         <script src="../js/repository.js"></script>
