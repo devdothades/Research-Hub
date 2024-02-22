@@ -8,6 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-<a href="../../pages/view.php"></a>
+<h1>test</h1>
 </body>
 </html>

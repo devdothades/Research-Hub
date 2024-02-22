@@ -19,7 +19,7 @@ if (isset($_SESSION['full_name'])) {
 
     <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top border-bottom shadow">
-        <a class="navbar-brand ms-5" href="#">
+        <a class="navbar-brand ms-5" href="home.php">
             <h5>Research<span class="text-primary">Hub</span></h5>
         </a>
 

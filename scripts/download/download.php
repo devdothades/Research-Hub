@@ -1,7 +1,7 @@
 <?php
 
 $file = basename($_GET['file']);
-$file_path = '../pdfs/' . $file;
+$file_path = '../../pdfs/' . $file;
 
 
 if(file_exists($file_path)){
@@ -12,6 +12,9 @@ if(file_exists($file_path)){
     header('Cache-Control: must-revalidate');
     header('Pragma: public');
     header('Expires: 0');
-    readfile($file);
+    readfile($file_path);
 }
+
+
+
 

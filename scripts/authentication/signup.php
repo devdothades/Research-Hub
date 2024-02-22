@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "hm0ejd74", "ACLC");
+require_once ('../../db.php');
 
 function validate($data): string
 {

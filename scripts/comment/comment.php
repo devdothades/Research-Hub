@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conn = mysqli_connect("localhost", "root", "hm0ejd74", "ACLC");
+require_once ('../../db.php');
 
 if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
     $name = $_SESSION["full_name"];
