@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if (isset($_SESSION['username'])) {
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,9 +12,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Research Hub</title>
+    <link rel="icon" href="../../assets/img/logo/logo.png">
 </head>
 <body>
-<h1>test</h1>
+
+
+
 </body>
 </html>
+
+
+    <?php
+} else {
+    header("Location: ../index.php");
+    exit();
+}
+?>
