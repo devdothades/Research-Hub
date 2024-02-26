@@ -102,7 +102,7 @@ if (isset($_SESSION['full_name'])) {
 
         <div class="row container-fluid">
             <?php if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                $conn = mysqli_connect("localhost", "root", "hm0ejd74", "ACLC");
+                require_once ('../db.php');
 
                 $search = ucwords($_POST['search']);
                 $category = $_POST['category'];

@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         if ($row['username'] === $username && $row['password'] === $password) {
             $_SESSION['username'] = $row['username'];
-            header('location: ../../pages/home.php');
+            header('location: ../../pages/index.php');
             exit();
         } else {
             header('location: ../../index.php?error=Incorrect Password or Email');

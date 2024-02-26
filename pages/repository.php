@@ -61,11 +61,10 @@ if (isset($_SESSION['full_name'])) {
             </div>
         </div>
 
-
         <div class="row container-fluid">
             <?php
 
-            $conn = mysqli_connect("localhost", "root", "hm0ejd74", "ACLC");
+            require_once ('../db.php');
 
             $query = mysqli_query($conn, "SELECT * FROM researches;");
 

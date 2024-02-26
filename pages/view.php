@@ -50,7 +50,7 @@ if (isset($_SESSION['full_name'])) {
 
 
     <?php
-    $conn = mysqli_connect("localhost", "root", "hm0ejd74", "ACLC");
+    require_once ('../db.php');
 
     $id = $_GET['id'];
     $query = mysqli_query($conn, "SELECT * FROM researches WHERE id='$id'");
