@@ -125,7 +125,7 @@ if (isset($_SESSION['username'])) {
                             <a type="button" class="btn btn-warning btn-sm" href="./update/update_repository.php?id=<?php echo $row['id']?>">
                                 Update
                             </a>
-                            <a type="button" class="btn btn-danger btn-sm delbtn" href="../scripts/crud/delete.php?id=<?php echo $row['id']?>">
+                            <a type="button" class="btn btn-danger btn-sm delbtn" href="../scripts/crud/delete_repository.php?id=<?php echo $row['id']?>">
                                 Delete
                             </a>
                         </td>

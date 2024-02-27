@@ -15,7 +15,7 @@ if (isset($_SESSION['username'])) {
         <link rel="shortcut icon" type="image/x-icon" href="../../.././assets/img/logo/logo.png"/>
         <link rel="stylesheet" href="../../.././node_modules/bootstrap/dist/css/bootstrap.css"/>
         <link rel="stylesheet" href="../../assets/view_repository.css?=<?php echo time() ?>"/>
-        <link rel="stylesheet" href="../../assets/sidebars.css">
+        <link rel="stylesheet" href="../../assets/update_repo.css">
     </head>
 
     <body>
@@ -87,30 +87,97 @@ if (isset($_SESSION['username'])) {
                 </ul>
             </div>
         </div>
-        <div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <?php
-                        require_once('../../../db.php');
+        <div class="form-container mt-4 mx-5">
+            <h3 class="text-black ms-5">Update Research</h3>
+            <?php if (isset($_GET["error"])) { ?>
+                <div class="alert alert-danger text-center" role="alert">
+                    <?php echo $_GET['error'] ?>
+                </div>
+            <?php } ?>
+            <?php if (isset($_GET["success"])) { ?>
+                <div class="alert alert-success text-center" role="alert">
+                    <?php echo $_GET['success'] ?>
+                </div>
+            <?php } ?>
 
-                        $id = $_GET['id'];
-                        $query = mysqli_query($conn, "SELECT * FROM messages WHERE id='$id'");
+            <?php require_once('../../../db.php');
+            $id = $_GET['id'];
+            $query = mysqli_query($conn, "SELECT * FROM researches WHERE id=$id");
 
-                        while ($row = mysqli_fetch_assoc($query)) : ?>
+            while($row = mysqli_fetch_assoc($query)) : ?>
 
-                            <div class="centered-box bg-light p-4">
-                                <h4 class=""><?php echo $row['email']?></h4>
-                                <h4 class=""><?php echo $row['name']?></h4>
-                                <p class="text-center"><?php echo $row['message']?></p>
-                            </div>
-                        <?php endwhile; ?>
+
+            <form class="mt-1" action="../../scripts/crud/update_repository.php" method="POST" id="FORM">
+                <div class="mx-3">
+                    <div class="row g-2 mt-2 justify-content-around">
+                        <div class="col-sm-5 me-5">
+                            <label for="title">Enter your Research Title</label>
+                            <input type="text" class="form-control mt-1 border border-0 input"
+                                   placeholder="ex. ACLC Research Hub" required id="title" name="title" value="<?php echo $row['title']?>"/>
+                        </div>
+                        <div class="col-sm-5">
+                            <label for="">Enter Research Category</label>
+                            <select class="form-select mt-1" aria-label="Default select example" name="category" required>
+                                <option selected disabled value="">Select Category</option>
+                                <option value="Natural Sciences">Natural Sciences</option>
+                                <option value="Social Sciences">Social Sciences</option>
+                                <option value="Humanities">Humanities</option>
+                                <option value="Engineering & Technology">Engineering & Technology</option>
+                                <option value="Health Sciences">Health Sciences</option>
+                                <option value="Environmental Sciences">Environmental Sciences</option>
+                                <option value="Mathematics & Statistics">Mathematics & Statistics</option>
+                                <option value="Business & Economics">Business & Economics</option>
+                                <option value="Education">Education</option>
+                                <option value="ICT">Information and Communication Technology</option>
+                                <option value="Agricultural & Environmental Sciences">Agriculture & Environmental Sciences</option>
+                                <option value="Law & Legal Studies">Law & Legal Studies</option>
+                                <option value="Fine Arts & Performing Arts">Fine Arts & Performing arts</option>
+                                <option value="Psychology & Behavioral Sciences">Psychology & Behavioral Sciences</option>
+                                <option value="Space & Planetary Sciences">Space & Planetary Sciences</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="mx-3">
+                    <div class="row g-2 mt-2 justify-content-around">
+
+                        <div class="col-sm-5 me-5">
+                            <label for="PASSWORD">Enter the Authors</label>
+                            <input type="text" class="form-control mt-1 border border-0 input"
+                                   placeholder="ex. Jerome Infante, Boboy Infnte, ..." required name="authors" value="<?php echo $row['authors']?>"/>
+                        </div>
+
+                        <div class="col-sm-5">
+                            <label for="">Enter your strand</label>
+
+                            <select class="form-select mt-1" aria-label="Default select example" name="strand" required>
+                                <option selected disabled value="">Select Category</option>
+                                <option value="TVL">TVL</option>
+                                <option value="HUMMS">HUMMS</option>
+                                <option value="GAS">GAS</option>
+                                <option value="STEM">STEM</option>
+                                <option value="ABM">ABM</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" mt-3">
+                    <div class="mx-5">
+                        <label for="exampleFormControlTextarea1">Enter a Description</label>
+                        <textarea class="form-control border border-0 input" rows="3"
+                                  placeholder="This research is about..." name="description"><?php echo $row['description']?></textarea>
+                    </div>
+                </div>
+                <input type="hidden" name="id" value="<?php echo $id?>">
+                <button class="btn btn-primary mx-5 mt-3" id="submit" type="submit">SUBMIT</button>
+                <?php endwhile; ?>
+            </form>
+
         </div>
 
-        <script src="../../.././node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
     </body>
 
     </html>

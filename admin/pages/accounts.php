@@ -113,10 +113,10 @@ if (isset($_SESSION['username'])) {
                         <td><?php echo $row['password'] ?></td>
 
                         <td>
-                            <a type="button" class="btn btn-warning btn-sm" href="">
+                            <a type="button" class="btn btn-warning btn-sm" href="./update/update_account.php?id=<?php echo $row['id']?>">
                                 Update
                             </a>
-                            <a type="button" class="btn btn-danger btn-sm" href="">
+                            <a type="button" class="btn btn-danger btn-sm delbtn" href="../scripts/crud/delete_account.php?id=<?php echo $row['id']?>">
                                 Delete
                             </a>
                         </td>
@@ -128,6 +128,9 @@ if (isset($_SESSION['username'])) {
             </table>
         </div>
     </main>
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./js/delete.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/sidebars.js"></script>
     </body>

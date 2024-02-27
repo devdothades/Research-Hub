@@ -71,8 +71,8 @@ if (isset($_SESSION['full_name'])) {
                     </div>
                     <div class="col-sm-5">
                         <label for="">Enter Research Category</label>
-                        <select class="form-select mt-1" aria-label="Default select example" name="category">
-                            <option selected disabled>Select Category</option>
+                        <select class="form-select mt-1" aria-label="Default select example" name="category" required>
+                            <option selected disabled value="">Select Category</option>
                             <option value="Natural Sciences">Natural Sciences</option>
                             <option value="Social Sciences">Social Sciences</option>
                             <option value="Humanities">Humanities</option>
@@ -104,8 +104,8 @@ if (isset($_SESSION['full_name'])) {
                     <div class="col-sm-5">
                         <label for="">Enter your strand</label>
 
-                        <select class="form-select mt-1" aria-label="Default select example" name="strand">
-                            <option selected disabled>Select Category</option>
+                        <select class="form-select mt-1" aria-label="Default select example" name="strand" required>
+                            <option selected disabled value="">Select Category</option>
                             <option value="TVL">TVL</option>
                             <option value="HUMMS">HUMMS</option>
                             <option value="GAS">GAS</option>
@@ -120,13 +120,13 @@ if (isset($_SESSION['full_name'])) {
                 <div class="mx-5">
                     <label for="exampleFormControlTextarea1">Enter a Description</label>
                     <textarea class="form-control border border-0 input" rows="3"
-                              placeholder="This research is about..." name="description"></textarea>
+                              placeholder="This research is about..." name="description" required></textarea>
                 </div>
             </div>
 
             <div class="mt-4 mx-5">
                 <label for="UploadResearchPDF"></label>
-                <input placeholder="Upload" type="file" id="UploadResearchPDF" name="pdfFile"/>
+                <input placeholder="Upload" type="file" id="UploadResearchPDF" name="pdfFile" required/>
             </div>
 
             <button class="btn btn-primary mx-5 mt-3" id="submit" type="submit">SUBMIT</button>
