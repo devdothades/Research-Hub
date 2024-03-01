@@ -1,3 +1,5 @@
+# copy all of these and paste it at the SQL console ide and execute the code
+
 CREATE DATABASE IF NOT EXISTS ACLC;
 USE ACLC;
 
@@ -41,6 +43,7 @@ CREATE TABLE admin(
                          password VARCHAR(255) NOT NULL
 );
 
-INSERT INTO admin(username, password) VALUES ('admin', 'fa99a4ae51ae079bdbbb5ce931bf9f92');
+
+INSERT INTO admin(username, password) VALUES ('admin', 'fa99a4ae51ae079bdbbb5ce931bf9f92'); # change the password of the admin account to your preference
 
 

@@ -12,6 +12,7 @@ if (isset($_SESSION['username'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="description" content=""/>
         <title>Admin</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../.././assets/img/logo/logo.png"/>
         <link
                 rel="stylesheet"
                 href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"

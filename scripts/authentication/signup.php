@@ -2,6 +2,7 @@
 
 require_once ('../../db.php');
 
+// function for trimming strings
 function validate($data): string
 {
     $data = trim($data);
@@ -10,15 +11,16 @@ function validate($data): string
 }
 
 if (isset($_SERVER['REQUEST_METHOD']) == 'POST') {
-    $full_name = ucwords(validate($_POST['FULL_NAME']));
-    $email = strtolower(validate($_POST['EMAIL']));
-    $pswrd = validate($_POST['PASSWORD']);
-    $password = validate(md5($_POST['PASSWORD']));
-    $re_password = validate(md5($_POST['RE_PASSWORD']));
+
+    $full_name = ucwords(validate($_POST['FULL_NAME'])); // name = 'FULL_NAME' from html
+    $email = strtolower(validate($_POST['EMAIL'])); // name = 'EMAIL' from html
+    $pswrd = validate($_POST['PASSWORD']); // name = 'PASSWORD' from html
+    $password = validate(md5($_POST['PASSWORD'])); // name = 'PASSWORD' from html
+    $re_password = validate(md5($_POST['RE_PASSWORD'])); // name = 'RE_PASSWORD' from html
 
 
-    $select_email = "SELECT * FROM `accounts` WHERE email = '$email' ";
-    $select_all = "SELECT * FROM `accounts` WHERE full_name ='$full_name' AND email = '$email'";
+    $select_email = "SELECT * FROM `accounts` WHERE email = '$email' "; // selecting email
+    $select_all = "SELECT * FROM `accounts` WHERE full_name ='$full_name' AND email = '$email'"; // selecting all of the values in a row
 
     $query_email = mysqli_query($conn, $select_email);
     $query_all = mysqli_query($conn, $select_all);

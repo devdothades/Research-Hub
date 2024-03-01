@@ -12,6 +12,7 @@ if (isset($_SESSION['username'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="description" content=""/>
         <title>Admin</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../.././assets/img/logo/logo.png"/>
         <link
             rel="stylesheet"
             href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -113,7 +114,7 @@ if (isset($_SESSION['username'])) {
                             <a type="button" class="btn btn-primary btn-sm" href="../pages/view/view_messages.php?id=<?php echo $row['id']?>">
                                 View
                             </a>
-                            <a type="button" class="btn btn-danger btn-sm" href="">
+                            <a type="button" class="btn btn-danger btn-sm delbtn" href="../scripts/crud/delete_message.php?id=<?php echo $row['id']?>">
                                 Delete
                             </a>
                         </td>
@@ -124,6 +125,9 @@ if (isset($_SESSION['username'])) {
             </table>
         </div>
     </main>
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./js/delete.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/sidebars.js"></script>
     </body>

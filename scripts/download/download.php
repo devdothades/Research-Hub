@@ -1,5 +1,7 @@
 <?php
 
+// this code is for downloading a pdf file
+
 $file = basename($_GET['file']);
 $file_path = '../../pdfs/' . $file;
 

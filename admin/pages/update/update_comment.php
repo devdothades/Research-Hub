@@ -91,6 +91,11 @@ if (isset($_SESSION['username'])) {
 
         <div class="container">
             <div class="row justify-content-center">
+                <?php if (isset($_GET["success"])) { ?>
+                    <div class="alert alert-success text-center" role="alert">
+                        <?php echo $_GET['success'] ?>
+                    </div>
+                <?php } ?>
                 <div class="col-md-6">
                     <div class="text-center">
                         <div class="card">
@@ -103,7 +108,7 @@ if (isset($_SESSION['username'])) {
 
                                 <form method="post" action="../../scripts/crud/update_comment.php">
                                     <div class="card-body">
-                                        <textarea rows="7" cols="45"><?php echo $row['comment']?></textarea>
+                                        <textarea rows="7" cols="45" name="comment"><?php echo $row['comment']?></textarea>
                                     </div>
                                     <input type="submit" class="btn btn-primary mb-2" value="UPDATE">
                                     <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
